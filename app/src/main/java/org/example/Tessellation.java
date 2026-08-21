@@ -38,6 +38,14 @@ public class Tessellation {
         // code for MAGENTA triangles
 
         // code for CYAN triangles
+        SimpleGraphics.setFillColor(colors[3]); 
+        for (int i = 0; i < 5; i++) {
+            SimpleGraphics.fillTriangle(
+                0 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                0 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT,
+                1 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT
+            );
+        }
     }
 
     public static void main(String[] args) {
