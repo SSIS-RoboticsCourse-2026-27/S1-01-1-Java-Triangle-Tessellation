@@ -68,6 +68,14 @@ SimpleGraphics.setFillColor(colors[2]); // set fill color to blue
         }
 
         // code for MAGENTA triangles
+                SimpleGraphics.setFillColor(colors[4]); 
+        for (int i = 0; i < 5; i++) { // fillTriangle(x1, y1, x2, y2, x3, y3)
+            SimpleGraphics.fillTriangle(
+                0 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                1 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                1 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT
+            );
+        }
 
         // code for CYAN triangles
 
