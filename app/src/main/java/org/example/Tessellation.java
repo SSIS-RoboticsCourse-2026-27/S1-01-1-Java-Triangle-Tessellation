@@ -8,7 +8,7 @@ public class Tessellation {
 
         // make some variables available
         // the color name "green" does not give the correct shade, so a hex code is used instead
-        String[] colors = {"red", "#00ff00", "blue", "cyan", "magenta", "yellow"};
+        String[] colors = {"#ff0000", "#00ff00", "#0000FF", "cyan", "magenta", "yellow"};
 
         // sizes of triangles are based on canvas size
         // we want to fit in 3 horizontally and 5 vertically.
@@ -18,6 +18,15 @@ public class Tessellation {
         // ==================================================================
         // Draw the tessellation (you should only edit code below this part!)
         // ==================================================================
+        SimpleGraphics.setFillColor(colors[3]); // set fill color to cyan
+        for (int i=0; i < 5; i++){
+            SimpleGraphics.fillTriangle(
+                0, i * TRIANGLE_HEIGHT,
+                TRIANGLE_WIDTH, TRIANGLE_HEIGHT * (i + 1),
+                0, (i + 1) * TRIANGLE_HEIGHT
+            );
+            System.out.println("1");
+        }
 
         // code for RED triangles
         SimpleGraphics.setFillColor(colors[0]); // set fill color to red
@@ -27,15 +36,46 @@ public class Tessellation {
                 3 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
                 3 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT
             );
+            System.out.println("2");
         }
 
         // code for BLUE triangles
-
+SimpleGraphics.setFillColor(colors[2]); // set fill color to blue
+        for (int i = 0; i < 5; i++) { // fillTriangle(x1, y1, x2, y2, x3, y3)
+            SimpleGraphics.fillTriangle(
+                2 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                2 * TRIANGLE_WIDTH, (i+1) * TRIANGLE_HEIGHT,
+                3 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT
+            );
+        }
         // code for YELLOW triangles
-
+        SimpleGraphics.setFillColor(colors[5]); // set fill color to red
+        for (int i = 0; i < 5; i++) { // fillTriangle(x1, y1, x2, y2, x3, y3)
+            SimpleGraphics.fillTriangle(
+                1 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                2 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                2 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT
+            );
+        }
         // code for GREEN triangles
+        SimpleGraphics.setFillColor(colors[1]); // set fill color to green
+        for (int i = 0; i < 5; i++) { // fillTriangle(x1, y1, x2, y2, x3, y3)
+            SimpleGraphics.fillTriangle(
+                2 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT,
+                1 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                1 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT
+            );
+        }
 
         // code for MAGENTA triangles
+                SimpleGraphics.setFillColor(colors[4]); 
+        for (int i = 0; i < 5; i++) { // fillTriangle(x1, y1, x2, y2, x3, y3)
+            SimpleGraphics.fillTriangle(
+                0 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                1 * TRIANGLE_WIDTH, i * TRIANGLE_HEIGHT,
+                1 * TRIANGLE_WIDTH, (i + 1) * TRIANGLE_HEIGHT
+            );
+        }
 
         // code for CYAN triangles
         SimpleGraphics.setFillColor(colors[3]); 
